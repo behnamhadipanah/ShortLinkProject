@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Application", "Application\ShortLink.Application\ShortLink.Application.csproj", "{C0CC4C44-99BA-46EC-B23C-22A4268C9A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.Application.Contract", "Application\ShortLink.Application.Contract\ShortLink.Application.Contract.csproj", "{43D00AE7-4211-40B2-84EC-47532C836E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Application.Contract", "Application\ShortLink.Application.Contract\ShortLink.Application.Contract.csproj", "{43D00AE7-4211-40B2-84EC-47532C836E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F8E11E0D-F0FC-4168-93B3-291B1E1CC1B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.Infrastructure.EfCore", "Infrastructure\ShortLink.Infrastructure.EfCore\ShortLink.Infrastructure.EfCore.csproj", "{DA7F7A22-ADC2-4BA0-8292-67B3C6F49B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Infrastructure.EfCore", "Infrastructure\ShortLink.Infrastructure.EfCore\ShortLink.Infrastructure.EfCore.csproj", "{DA7F7A22-ADC2-4BA0-8292-67B3C6F49B22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Infrastructure.Core", "Infrastructure\ShortLink.Infrastructure.Core\ShortLink.Infrastructure.Core.csproj", "{337A7D9D-5972-4E35-9425-38AD73ADBFA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{676D637C-5D30-4CE3-9379-CBFF52283B96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.Framework", "Framework\ShortLink.Framework\ShortLink.Framework.csproj", "{F308196B-A2F3-496E-90DB-4CA5DE98CA0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Framework", "Framework\ShortLink.Framework\ShortLink.Framework.csproj", "{F308196B-A2F3-496E-90DB-4CA5DE98CA0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

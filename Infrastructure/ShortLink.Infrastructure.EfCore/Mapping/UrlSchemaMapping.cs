@@ -13,7 +13,7 @@ namespace ShortLink.Infrastructure.EfCore.Mapping
     {
         public void Configure(EntityTypeBuilder<UrlSchema> builder)
         {
-            builder.ToTable("UrlSchemas", "dbo");
+            builder.ToTable("UrlSchemas", "Url");
             builder.HasKey(x => x.Id);
             builder.HasIndex(x => x.ShortUrl).IsUnique();
             builder.Property(x => x.Id).IsRequired();

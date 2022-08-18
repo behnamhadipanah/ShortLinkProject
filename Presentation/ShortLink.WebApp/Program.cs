@@ -1,8 +1,12 @@
+using ShortLink.Infrastructure.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+    
 
+Bootstrapper.Config(builder.Services,builder.Configuration.GetConnectionString("UrlSchemaContext"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,7 +23,17 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "ManageLink",
+        pattern: "{shortUrl}",
+        defaults: new { controller = "ShortLink", action = "Index" });
 
-app.MapRazorPages();
+
+    endpoints.MapRazorPages();
+});
+
+
 
 app.Run();
