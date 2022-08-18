@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\ShortLink.Application.Contract\ShortLink.Application.Contract.csproj" />
+    <ProjectReference Include="..\..\Framework\ShortLink.Framework\ShortLink.Framework.csproj" />
+  </ItemGroup>
+
+</Project>
