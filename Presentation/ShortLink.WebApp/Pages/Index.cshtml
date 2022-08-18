@@ -6,5 +6,43 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+
+
+
+<div class="container rtl">
+    <fieldset>
+        <form method="Post">
+            <div class="row">
+                <div class="col-sm-10">
+                    <input id="LongUrl" name="LongUrl" class="form-control form-control-lg"
+                           type="text" autocomplete="off" placeholder="لینک خود را کوتاه کنید">
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-success btn-lg" type="submit">کوتاه کردن</button>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+    <fieldset style="margin: 50px">
+        @if (Model.IsError)
+        {
+            <div class="row text-center">
+                <h5 class="alert alert-danger">@Model.ShortUrl</h5>
+            </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.ShortUrl) && !Model.IsError)
+        {
+            <div class="row">
+                <div class="col-sm-2">
+                    نتیجه:
+                </div>
+                <div class="col-sm-10">
+                    <a class="link-primary"
+                   href="@Model.ShortUrl">@Model.ShortUrl</a>
+                </div>
+            </div>
+        }
+    </fieldset>
 </div>

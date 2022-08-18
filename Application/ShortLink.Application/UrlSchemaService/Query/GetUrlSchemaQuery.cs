@@ -11,17 +11,17 @@ using ShortLink.Framework.Application;
 using ShortLink.Framework.Infrastructure;
 
 namespace ShortLink.Application.UrlSchemaService.Query;
-public class UrlSchemaQuery : IRequestWrapper<UrlSchemaViewModel>
+public class GetUrlSchemaQuery : IRequestWrapper<UrlSchemaViewModel>
 {
     public string ShortUrl { get; set; }
 
-    public UrlSchemaQuery(string shortUrl)
+    public GetUrlSchemaQuery(string shortUrl)
     {
         ShortUrl = shortUrl;
     }
 }
 
-public class UrlSchemaQueryHandler : IHandlerWrapper<UrlSchemaQuery, UrlSchemaViewModel>
+public class UrlSchemaQueryHandler : IHandlerWrapper<GetUrlSchemaQuery, UrlSchemaViewModel>
 {
     private readonly IUrlSchemaRepository _urlSchemaRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -31,7 +31,7 @@ public class UrlSchemaQueryHandler : IHandlerWrapper<UrlSchemaQuery, UrlSchemaVi
         _urlSchemaRepository = urlSchemaRepository;
         _unitOfWork = unitOfWork;
     }
-    public async Task<Response<UrlSchemaViewModel>> Handle(UrlSchemaQuery request, CancellationToken cancellationToken)
+    public async Task<Response<UrlSchemaViewModel>> Handle(GetUrlSchemaQuery request, CancellationToken cancellationToken)
     {
         _unitOfWork.BeginTransaction();
         var urlSchema = _urlSchemaRepository.GetUrlSchema(request.ShortUrl);
@@ -40,7 +40,7 @@ public class UrlSchemaQueryHandler : IHandlerWrapper<UrlSchemaQuery, UrlSchemaVi
         if (urlSchema != null)
             return await Task.FromResult(Response.Ok<UrlSchemaViewModel>("Success Get UrlSchema", urlSchema));
 
-        return await Task.FromResult(Response.Ok<UrlSchemaViewModel>("UrlSchema Not Found", null));
+        return await Task.FromResult(Response.Fail<UrlSchemaViewModel>("UrlSchema Not Found", null));
 
     }
 }
