@@ -9,7 +9,11 @@ Short Link Project allows you to run your own URL shortener on your own server. 
 Technologies
 -----------------------------------------------------------------------------------------------------
 Programming Language: .Net 6 ( RazorPage)
+
 Architecture : Onion Architecture
+
 EntityFrameworkCore 
+
 CQRS
+
 Repository and Unitofwork
